@@ -1,0 +1,43 @@
+After completing the first activity, 
+I noticed that program would sometimes give the correct answer, 
+but often would give a sum that was short one thread ID
+
+
+➜  Thread Activity git:(main) ✗ ./thread1
+Thread ID: 123145405509632
+
+Thread ID: 123145404436480
+
+Thread ID: 123145406046208
+
+Thread ID: 123145404973056
+
+Thread ID: 123145406582784
+
+Sum so far 492581622575204  
+// The sum here is incorrect 
+// and one of the threads were not able to add their ID to the sum.
+
+
+
+This at first was very confusing, 
+but upon reviewing the reading made a lot more sense.
+
+
+
+
+➜  Thread Activity git:(main) ✗ ./thread2
+Thread ID: 123145422741504
+
+Thread ID: 123145423278080
+
+Thread ID: 123145424351232
+
+Thread ID: 123145423814656
+
+Thread ID: 123145424887808
+
+Sum so far 615727119073380
+
+//Using mutex we are able to isolate the 
+//critical area and ensure that the sum is correctly calculated.
